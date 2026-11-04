@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "title": "Lanja {'|'} Computer Engineer & Full-Stack Developer",
+    "description": "Portfolio of Lanja, a Madagascar-based software developer specializing in web application development, frontend engineering, APIs, and database-driven systems.",
+    "jobTitle": "Computer Engineer {'|'} Full-Stack Developer"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "backToTop": "Lanja, back to top",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primaryNav": "Primary",
+    "mobileNav": "Mobile",
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme",
+    "lightTheme": "Light theme",
+    "darkTheme": "Dark theme",
+    "language": "Language",
+    "switchLanguage": "Switch language to {language}",
+    "expertise": "Areas of expertise",
+    "level": "Level",
+    "technologies": "Technologies",
+    "featured": "Featured",
+    "featuredProject": "Featured project",
+    "openProject": "Open {title}",
+    "portrait": "Portrait of Lanja, smiling with a hand on his chin"
+  },
+  "hero": {
+    "greeting": "Welcome visitor,",
+    "intro": "My name is",
+    "role": "I am a web-apps and software developer",
+    "paragraph": "With a strong passion for building modern, scalable web applications. Dedicated to creating innovative solutions, I love crafting clean, efficient, and maintainable code that brings ideas to life.",
+    "tags": [
+      "Front-end",
+      "Back-end",
+      "Full-stack",
+      "API Integration",
+      "Database Management",
+      "Software architecture",
+      "Project management",
+      "Web",
+      "Mobile",
+      "Desktop"
+    ],
+    "downloadCv": "Download CV",
+    "cvSoon": "CV coming soon",
+    "aboutMe": "About me",
+    "projects": "Projects",
+    "achievements": "Achievements",
+    "seeMore": "see more…"
+  },
+  "about": {
+    "title": "About me",
+    "shortBio": "My name is Lanja, and I am a passionate full-stack developer with a strong passion for building modern, scalable web applications.",
+    "fullBio": "Dedicated to creating innovative solutions, I love crafting clean, efficient, and maintainable code that brings ideas to life, whether it is a dynamic frontend interface or a powerful backend system and API.",
+    "summary": "Software developer with a degree from the École Nationale d’Informatique (ENI), Fianarantsoa, Madagascar, specializing in software engineering and databases, with over three years of experience in web application development, platform design, and database management.",
+    "educationTitle": "Education",
+    "languagesTitle": "Languages",
+    "interestsTitle": "Interests",
+    "institution": "École Nationale d’Informatique (ENI)",
+    "education": {
+      "master": {
+        "qualification": "Master's Degree",
+        "field": "Software and Database Engineering"
+      },
+      "bachelor": {
+        "qualification": "Bachelor's Degree",
+        "field": "Software and Database Engineering"
+      }
+    },
+    "languages": {
+      "malagasy": { "name": "Malagasy", "level": "Native" },
+      "french": { "name": "French", "level": "Very good" },
+      "english": { "name": "English", "level": "Professional" }
+    },
+    "interests": [
+      "Sport",
+      "Football",
+      "Basketball",
+      "Reading",
+      "Video games",
+      "Japanese anime"
+    ],
+    "other": {
+      "linux": {
+        "name": "Linux",
+        "description": "Linux enthusiast, comfortable on Linux and Windows."
+      },
+      "scrum": {
+        "name": "Agile Scrum",
+        "description": "Agile development and issue management."
+      },
+      "uml": { "name": "UML", "description": "Software modeling." },
+      "database": {
+        "name": "Database design",
+        "description": "Data consistency, reliability and management."
+      },
+      "performance": {
+        "name": "Performance & stability",
+        "description": "Feature delivery, bug fixing and optimization."
+      },
+      "deployment": {
+        "name": "Deployment",
+        "description": "Docker-based environments and automated deployment."
+      }
+    }
+  },
+  "skills": {
+    "title": "Tech stack / Skills",
+    "subtitle": "Grouped by how much I use each tool and for how long.",
+    "restApi": "REST API",
+    "tiers": {
+      "expert": ["Most used", "expert", "> 3 years"],
+      "advanced": ["advanced", "> 2 years"],
+      "intermediate": ["intermediate", "> 1 year"],
+      "academic": ["academic", "learning", "exploring"]
+    }
+  },
+  "experience": {
+    "title": "Job Experience",
+    "subtitle": "Where I have worked and what I built there.",
+    "current": "Current",
+    "internship": "Internship",
+    "now": "Now",
+    "showDetails": "Show details",
+    "hideDetails": "Hide details",
+    "items": {
+      "neoshore-frontend-developer": {
+        "jobTitle": "Frontend Vue.js Developer",
+        "summary": "Contributed to the development and improvement of a Vue.js web application for an offshore client, helping the solution reach 75% production within two years.",
+        "responsibilities": [
+          "Implemented features and optimized application performance.",
+          "Fixed bugs and improved product stability.",
+          "Participated in Agile development, issue management, and continuous delivery of improvements."
+        ],
+        "metric": "75%",
+        "achievement": "solution in production within two years"
+      },
+      "kontiki-full-stack-developer": {
+        "jobTitle": "Full-stack Developer",
+        "summary": "Helped automate the creation and management of campaign websites and centralize marketing data, improving internal operational efficiency.",
+        "responsibilities": [
+          "Developed a Laravel platform to generate blog-style campaign mini-sites, including code generation and automatic server deployment.",
+          "Built a Nuxt.js web application inspired by Google Sheets to manage and visualize campaign data collected through APIs.",
+          "Implemented Flask backend services for automated campaign data collection and processing.",
+          "Managed PostgreSQL and MySQL databases for different applications.",
+          "Used Docker to standardize environments and support platform deployment."
+        ],
+        "metric": "3x",
+        "achievement": "internal operational efficiency"
+      },
+      "kontiki-internship": {
+        "jobTitle": "Intern Full-stack Developer",
+        "summary": "Worked on internal applications and web services to improve integration and efficiency of company tools.",
+        "responsibilities": [
+          "Developed internal applications and platforms across frontend and backend.",
+          "Implemented APIs and web services to integrate and extend existing tools.",
+          "Delivered features, bug fixes, and improvements for internal mini-projects.",
+          "Participated in database design and management to support data consistency and reliability."
+        ],
+        "metric": "Up to 40%",
+        "achievement": "better integration and efficiency in 3 months"
+      },
+      "dgi-php-internship": {
+        "jobTitle": "Intern PHP Developer",
+        "summary": "Contributed to a platform for managing information related to minimum tax payments and improving the taxpayer consultation process.",
+        "responsibilities": [
+          "Designed and developed a platform to manage the tax payment system.",
+          "Implemented a REST API web service to retrieve and display minimum tax due for each taxpayer.",
+          "Participated in database design and tax data management.",
+          "Structured the application using Laravel framework best practices."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects & Achievements",
+    "subtitle": "Selected professional and internship projects.",
+    "problem": "Problem",
+    "solution": "Solution",
+    "types": {
+      "Professional": "Professional",
+      "Internship": "Internship",
+      "Personal": "Personal",
+      "Academic": "Academic"
+    },
+    "items": {
+      "campaign-minisite-generator": {
+        "title": "Automated Campaign Mini-site Generator",
+        "description": "A Laravel-based platform that automates the generation of blog-style mini-sites for marketing campaigns, including code generation and automatic server deployment.",
+        "problem": "Creating and deploying campaign mini-sites manually takes time and creates repetitive work.",
+        "solution": "Automated mini-site generation and deployment through a Laravel platform."
+      },
+      "campaign-data-dashboard": {
+        "title": "Campaign Data Management Dashboard",
+        "description": "A Nuxt.js web application inspired by Google Sheets for managing and visualizing marketing campaign data collected via APIs.",
+        "problem": "Campaign information collected from APIs needed a more centralized and accessible interface.",
+        "solution": "A spreadsheet-inspired web application for centralized campaign data management and visualization."
+      },
+      "tax-minimum-payment-platform": {
+        "title": "Minimum Tax Payment Information Platform",
+        "description": "A platform to help manage minimum tax payment information and let taxpayers retrieve the amount due through a REST API.",
+        "problem": "Taxpayers needed a more efficient way to consult minimum tax payment information.",
+        "solution": "A Laravel platform with a REST API and PostgreSQL database integration."
+      },
+      "neoshore-vuejs-application": {
+        "title": "Offshore Client Web Application",
+        "description": "Frontend features, performance improvements, bug fixes and stability work for a Vue.js web application that reached 75% production within two years.",
+        "problem": "The offshore web application required continuous frontend development, performance improvements and bug fixes to reach production readiness while maintaining stability throughout its development.",
+        "solution": "Incremental frontend features and stability improvements delivered as part of an Agile team."
+      },
+      "automated-campaign-data-processing": {
+        "title": "Automated Campaign Data Collection and Processing",
+        "description": "Backend services that automate the collection and processing of campaign data.",
+        "problem": "Campaign data collection and processing involved repetitive operational tasks.",
+        "solution": "Python Flask backend services for automated data collection and processing."
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's build something together",
+    "intro": "Have a project, opportunity, or idea to discuss? Feel free to get in touch.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "name": "Full name",
+    "emailAddress": "Email address",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send message",
+    "success": "Thank you for your message. I will get back to you as soon as possible.",
+    "error": "Something went wrong. Please email me directly instead.",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "copyItem": "Copy {item}"
+  },
+  "footer": {
+    "rights": "© {year} {name}. Built with Nuxt & Tailwind CSS."
+  }
+}

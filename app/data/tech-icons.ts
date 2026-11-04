@@ -1,0 +1,42 @@
+import type { TechMeta } from '~/types/portfolio'
+
+/** Technology name -> icon. Names must match the strings used in portfolio.ts. */
+export const techIcons: Record<string, TechMeta> = {
+  JavaScript: { icon: 'logos:javascript' },
+  TypeScript: { icon: 'logos:typescript-icon' },
+  'Vue.js': { icon: 'logos:vue' },
+  'Nuxt.js': { icon: 'logos:nuxt-icon' },
+  Vite: { icon: 'logos:vitejs' },
+  npm: { icon: 'logos:npm-icon' },
+  'Tailwind CSS': { icon: 'logos:tailwindcss-icon' },
+  Bootstrap: { icon: 'logos:bootstrap' },
+  HTML: { icon: 'logos:html-5' },
+  CSS: { icon: 'logos:css-3' },
+  jQuery: { icon: 'logos:jquery', invertInDark: true },
+  MySQL: { icon: 'logos:mysql', invertInDark: false },
+  PostgreSQL: { icon: 'logos:postgresql' },
+  SQLite: { icon: 'logos:sqlite' },
+  Redis: { icon: 'logos:redis' },
+  Git: { icon: 'logos:git-icon' },
+  'REST API': { icon: 'lucide:webhook' },
+  GraphQL: { icon: 'logos:graphql' },
+  PHP: { icon: 'logos:php' },
+  Laravel: { icon: 'logos:laravel' },
+  Symfony: { icon: 'logos:symfony', invertInDark: true },
+  CodeIgniter: { icon: 'logos:codeigniter' },
+  Python: { icon: 'logos:python' },
+  Flask: { icon: 'logos:flask', invertInDark: true },
+  FastAPI: { icon: 'logos:fastapi-icon' },
+  Docker: { icon: 'logos:docker-icon' },
+  Nginx: { icon: 'logos:nginx' },
+  'Node.js': { icon: 'logos:nodejs-icon' },
+  'React.js': { icon: 'logos:react' },
+  'React Native': { icon: 'logos:react' },
+  Flutter: { icon: 'logos:flutter' },
+  'Ionic Capacitor': { icon: 'logos:ionic-icon' },
+  Java: { icon: 'logos:java' },
+  C: { icon: 'logos:c' },
+  'C++': { icon: 'logos:c-plusplus' },
+}
+
+export const fallbackTechIcon: TechMeta = { icon: 'lucide:code-xml' }

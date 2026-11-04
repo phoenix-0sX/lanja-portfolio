@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens (RGB triplets so Tailwind opacity modifiers work) */
+:root {
+  --page: 250 250 250;
+  --card: 255 255 255;
+  --muted: 239 241 240;
+  --ink: 55 65 81;
+  --soft: 107 114 128;
+  --line: 226 232 229;
+  --accent: 0 200 100;
+  --art-1: 65 208 139;
+  --art-2: 157 229 122;
+  color-scheme: light;
+}
+
+:root.dark {
+  --page: 31 31 31;
+  --card: 42 42 42;
+  --muted: 37 37 37;
+  --ink: 245 245 245;
+  --soft: 163 163 163;
+  --line: 58 58 58;
+  --accent: 110 240 160;
+  --art-1: 4 147 72;
+  --art-2: 95 168 64;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-page font-sans text-ink antialiased transition-colors duration-300;
+  }
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand;
+  }
+  ::selection {
+    @apply bg-brand/30;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .section-y {
+    @apply py-20 sm:py-28;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-card/80 shadow-soft backdrop-blur;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-md border border-brand/30 bg-brand/10 px-2.5 py-1 text-xs font-semibold text-brand-deep dark:border-accent/30 dark:bg-accent/10 dark:text-accent;
+  }
+  .chip::before {
+    content: '';
+    @apply size-1.5 rounded-full bg-current;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition duration-200 active:scale-[0.98];
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white shadow-soft hover:bg-brand-deep;
+  }
+  .btn-outline {
+    @apply btn border border-ink/40 text-ink hover:border-brand hover:text-brand dark:border-ink/50 dark:hover:text-accent;
+  }
+  .field {
+    @apply w-full rounded-lg border border-line bg-page px-3.5 py-2.5 text-sm text-ink placeholder:text-soft/70 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30;
+  }
+}
+
+/* Scroll reveal (class added by the v-reveal directive) */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Section title underline grows in when the title scrolls into view */
+.reveal .title-bar {
+  width: 0;
+  transition: width 0.8s 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible .title-bar {
+  width: 4rem;
+}
+
+/* Gentle shine sweeping over the primary button on hover */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+}
+.btn-primary:not([aria-disabled='true']):hover::after {
+  transform: translateX(120%);
+  transition: transform 0.7s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .reveal .title-bar {
+    width: 4rem;
+    transition: none;
+  }
+  .animate-float,
+  .animate-drift,
+  .animate-fade-up,
+  .animate-pop-in,
+  .animate-breathe,
+  .animate-bob,
+  .animate-ping {
+    animation: none !important;
+  }
+}
