@@ -15,7 +15,12 @@ export default defineNuxtConfig({
   serverDir: 'server',
   devtools: { enabled: false },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/i18n'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/icon',
+    '@nuxtjs/i18n',
+    '@vercel/speed-insights',
+  ],
 
   css: ['@fontsource-variable/inter'],
 
