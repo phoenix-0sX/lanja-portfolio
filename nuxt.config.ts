@@ -1,13 +1,18 @@
-import { techIcons, fallbackTechIcon } from './app/data/tech-icons'
+import { techIcons, fallbackTechIcon } from './app/data/tech-icons';
 
 const bundledIcons = [
-  ...new Set([...Object.values(techIcons).map((t) => t.icon), fallbackTechIcon.icon]),
-]
+  ...new Set([
+    ...Object.values(techIcons).map((t) => t.icon),
+    fallbackTechIcon.icon,
+  ]),
+];
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   srcDir: 'app',
+  // Keep API routes in <project>/server (srcDir is 'app', so Nuxt would otherwise look in app/server).
+  serverDir: 'server',
   devtools: { enabled: false },
 
   modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/i18n'],
@@ -46,10 +51,11 @@ export default defineNuxtConfig({
   typescript: { strict: true },
 
   runtimeConfig: {
+    // PRIVATE (server only). Set the env var NUXT_FORMINIT_API_KEY.
+    forminitApiKey: '',
     public: {
-      // Set NUXT_PUBLIC_CONTACT_ENDPOINT to a form service URL (Formspree, Getform, ...).
-      // When empty, the contact form falls back to opening the visitor's mail client.
-      contactEndpoint: '',
+      // Public by design (it is in the page anyway). Override with NUXT_PUBLIC_FORMINIT_FORM_ID.
+      forminitFormId: '1pnsjgyk801',
     },
   },
 
@@ -63,7 +69,12 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', sizes: '48x48' },
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico',
+          sizes: '48x48',
+        },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       ],
       script: [
@@ -78,4 +89,4 @@ export default defineNuxtConfig({
   },
 
   nitro: { prerender: { routes: ['/', '/fr'] } },
-})
+});

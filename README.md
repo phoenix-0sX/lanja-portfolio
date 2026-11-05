@@ -16,7 +16,7 @@ npm run generate   # static site -> .output/public
 ## Before publishing
 
 - **CV**: put the PDF in `app/public/` and set `resume.fileUrl` in `portfolio.ts` (button is disabled until then).
-- **Contact form**: set `NUXT_PUBLIC_CONTACT_ENDPOINT` (Formspree, Getform...). Without it the form opens the visitor's mail client.
+- **Contact form (Forminit)**: copy `.env.example` to `.env` (git-ignored) and set `NUXT_FORMINIT_API_KEY`. In production set the same variable in your host's environment settings and deploy with `nuxt build` (a server/serverless preset), not `nuxt generate`. Form id: `NUXT_PUBLIC_FORMINIT_FORM_ID` (default in `nuxt.config.ts`).
 - **Social links / project links / screenshots**: fill them in `portfolio.ts`.
 
 ## Languages (EN / FR)
