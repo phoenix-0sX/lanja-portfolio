@@ -240,7 +240,8 @@
     "error": "Something went wrong. Please email me directly instead.",
     "copy": "Copy",
     "copied": "Copied!",
-    "copyItem": "Copy {item}"
+    "copyItem": "Copy {item}",
+    "sending": "Sending…"
   },
   "footer": {
     "rights": "© {year} {name}. Built with Nuxt & Tailwind CSS."

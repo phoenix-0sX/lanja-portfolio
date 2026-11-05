@@ -240,7 +240,8 @@
     "error": "Une erreur est survenue. Veuillez plutôt m'écrire directement par e-mail.",
     "copy": "Copier",
     "copied": "Copié !",
-    "copyItem": "Copier : {item}"
+    "copyItem": "Copier : {item}",
+    "sending": "Envoi en cours…"
   },
   "footer": {
     "rights": "© {year} {name}. Conçu avec Nuxt & Tailwind CSS."

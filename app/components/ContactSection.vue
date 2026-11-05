@@ -1,8 +1,14 @@
 <script setup lang="ts">
+import { Forminit } from 'forminit';
+
 const { t } = useI18n();
 const portfolio = usePortfolio();
 const contact = computed(() => portfolio.value.contact);
 const config = useRuntimeConfig();
+
+// Submissions go through our own server route (/api/forminit), which adds the secret API token.
+// The token never reaches the browser.
+const forminit = new Forminit({ proxyUrl: '/api/forminit' });
 
 const form = reactive({
   name: '',
@@ -14,40 +20,64 @@ const form = reactive({
 type Status = 'idle' | 'sending' | 'success' | 'error';
 const status = ref<Status>('idle');
 
+// Guard: at most MAX_SUBMISSIONS requests per browser session (sessionStorage = per tab, cleared when it closes).
+// Beyond that, the button still works but the request is silently dropped, so it can't burn the Forminit quota.
+const MAX_SUBMISSIONS = 2;
+const SUBMISSIONS_KEY = 'lanja_contact_submissions';
+let memoryCount = 0; // fallback when sessionStorage is unavailable
+
+function readSubmissionCount(): number {
+  try {
+    return Number(sessionStorage.getItem(SUBMISSIONS_KEY)) || 0;
+  } catch {
+    return memoryCount;
+  }
+}
+
+function incrementSubmissionCount() {
+  memoryCount = readSubmissionCount() + 1;
+  try {
+    sessionStorage.setItem(SUBMISSIONS_KEY, String(memoryCount));
+  } catch {
+    /* storage unavailable: the in-memory counter still applies */
+  }
+}
+
 async function submit() {
   // Honeypot: real visitors never fill this hidden field.
   if (form.website) return;
 
-  const endpoint = config.public.contactEndpoint as string;
-  if (!endpoint) {
-    // No form service configured: open the visitor's mail client instead.
-    const body = `${form.message}\n\n— ${form.name} (${form.email})`;
-    window.location.href = `mailto:${contact.value.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
-    status.value = 'success';
+  // Session limit reached: swallow the click, send nothing.
+  if (readSubmissionCount() >= MAX_SUBMISSIONS) return;
+
+  incrementSubmissionCount();
+
+  status.value = 'sending';
+
+  // Field names follow Forminit's `fi-<block>-<name>` convention.
+  const data = new FormData();
+  data.append('fi-sender-fullName', form.name);
+  data.append('fi-sender-email', form.email);
+  data.append('fi-text-subject', form.subject);
+  data.append('fi-text-message', form.message);
+
+  const { error } = await forminit.submit(config.public.forminitFormId, data);
+
+  if (error) {
+    // Details for the browser console (e.g. a field name Forminit does not know); visitors get the friendly message.
+    console.error('[contact] Forminit error:', error);
+    status.value = 'error';
     return;
   }
 
-  status.value = 'sending';
-  try {
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        name: form.name,
-        email: form.email,
-        subject: form.subject,
-        message: form.message,
-      }),
-    });
-    if (!res.ok) throw new Error(String(res.status));
-    status.value = 'success';
-    Object.assign(form, { name: '', email: '', subject: '', message: '' });
-  } catch {
-    status.value = 'error';
-  }
+  status.value = 'success';
+  Object.assign(form, {
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+    website: '',
+  });
 }
 
 const details = computed(() => [
@@ -263,7 +293,11 @@ onBeforeUnmount(() => clearTimeout(copiedTimer));
                 class="size-4"
                 :class="status === 'sending' ? 'animate-spin' : ''"
               />
-              {{ contact.form.submitLabel }}
+              {{
+                status === 'sending'
+                  ? t('contact.sending')
+                  : contact.form.submitLabel
+              }}
             </button>
             <p
               v-if="status === 'success'"
