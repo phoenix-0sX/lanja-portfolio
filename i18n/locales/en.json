@@ -59,13 +59,13 @@
   },
   "about": {
     "title": "About me",
-    "shortBio": "My name is Lanja, and I am a passionate full-stack developer with a strong passion for building modern, scalable web applications.",
+    "shortBio": "I am {fullname}, commonly known as {name}, a passionate full-stack developer specializing in building modern, scalable web applications.",
     "fullBio": "Dedicated to creating innovative solutions, I love crafting clean, efficient, and maintainable code that brings ideas to life, whether it is a dynamic frontend interface or a powerful backend system and API.",
-    "summary": "Software developer with a degree from the École Nationale d’Informatique (ENI), Fianarantsoa, Madagascar, specializing in software engineering and databases, with over three years of experience in web application development, platform design, and database management.",
+    "summary": "Software developer with a degree from the École Nationale d'Informatique (ENI), Fianarantsoa, Madagascar, specializing in software engineering and databases, with over three years of experience in web application development, platform design, and database management.",
     "educationTitle": "Education",
     "languagesTitle": "Languages",
     "interestsTitle": "Interests",
-    "institution": "École Nationale d’Informatique (ENI)",
+    "institution": "École Nationale d'Informatique (ENI)",
     "education": {
       "master": {
         "qualification": "Master's Degree",

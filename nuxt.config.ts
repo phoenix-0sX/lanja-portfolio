@@ -60,6 +60,8 @@ export default defineNuxtConfig({
     // PRIVATE (server only). Set the env var NUXT_FORMINIT_API_KEY.
     forminitApiKey: '',
     public: {
+      // Canonical origin used for canonical/hreflang/Open Graph/JSON-LD. Override with NUXT_PUBLIC_SITE_URL.
+      siteUrl: 'https://lanja.dev',
       // Public by design (it is in the page anyway). Override with NUXT_PUBLIC_FORMINIT_FORM_ID.
       forminitFormId: '1pnsjgyk801',
     },
