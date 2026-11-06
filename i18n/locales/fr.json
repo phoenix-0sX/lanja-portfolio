@@ -59,7 +59,7 @@
   },
   "about": {
     "title": "À propos de moi",
-    "shortBio": "Je m'appelle Lanja, développeur full-stack passionné par la création d'applications web modernes et évolutives.",
+    "shortBio": "Je suis {fullname}, connu sous le nom de {name}, développeur full-stack passionné par la création d'applications web modernes et évolutives.",
     "fullBio": "Dédié à la conception de solutions innovantes, j'aime écrire un code propre, efficace et maintenable qui donne vie aux idées, qu'il s'agisse d'une interface frontend dynamique ou d'un système backend et d'une API performants.",
     "summary": "Développeur logiciel diplômé de l'École nationale d'informatique (ENI), spécialisé en génie logiciel et bases de données, avec plus de 3 ans d'expérience dans le développement d'applications web, la conception de plateformes et la gestion de bases de données.",
     "educationTitle": "Diplômes",
