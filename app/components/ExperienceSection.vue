@@ -18,7 +18,7 @@ function toggle(id: string) {
   >
     <div class="container-page">
       <SectionTitle
-        emoji="&#128194;"
+        emoji="noto:open-file-folder"
         :title="t('experience.title')"
         :subtitle="t('experience.subtitle')"
       />

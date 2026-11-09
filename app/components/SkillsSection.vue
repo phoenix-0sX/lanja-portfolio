@@ -27,7 +27,7 @@ const railTone: Record<SkillTone, string> = {
   <section id="skills" class="section-y">
     <div class="container-page">
       <SectionTitle
-        emoji="&#128736;&#65039;"
+        emoji="noto:hammer-and-wrench"
         :title="t('skills.title')"
         :subtitle="t('skills.subtitle')"
       />

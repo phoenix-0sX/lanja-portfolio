@@ -25,8 +25,9 @@ const hasCv = computed(() => resume.value.fileUrl.trim().length > 0);
             <span
               class="inline-block origin-[70%_70%] animate-[wave_2.4s_ease-in-out_1]"
               aria-hidden="true"
-              >&#128075;</span
             >
+              <Icon name="noto:waving-hand" class="size-[0.9em]" />
+            </span>
             {{ hero.greeting }}
           </span>
           <span class="mt-1 block">
