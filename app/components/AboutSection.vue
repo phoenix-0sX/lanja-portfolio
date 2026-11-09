@@ -10,7 +10,7 @@ const about = computed(() => portfolio.value.about);
   <section id="about" class="section-y border-t border-line/60 bg-muted/40">
     <div class="container-page">
       <SectionTitle
-        emoji="&#128587;"
+        emoji="noto:person-raising-hand"
         :title="t('about.title')"
         :subtitle="about.shortBio"
       />

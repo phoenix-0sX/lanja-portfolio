@@ -8,7 +8,7 @@ const projects = computed(() => portfolio.value.projects);
   <section id="projects" class="section-y">
     <div class="container-page">
       <SectionTitle
-        emoji="&#128188;"
+        emoji="noto:briefcase"
         :title="projects.title"
         :subtitle="projects.description"
       />
@@ -46,8 +46,13 @@ const projects = computed(() => portfolio.value.projects);
                 :title="t('a11y.featured')"
                 :aria-label="t('a11y.featuredProject')"
                 role="img"
-                >&#127942;</span
               >
+                <Icon
+                  name="noto:trophy"
+                  class="size-[1.1em] shrink-0"
+                  aria-hidden="true"
+                />
+              </span>
             </div>
 
             <div class="flex flex-1 flex-col p-5 sm:p-6">

@@ -13,9 +13,15 @@ const featured = computed(() =>
       id="hero-projects-title"
       class="mb-4 flex flex-wrap items-center gap-x-2 text-base font-bold text-soft"
     >
-      <span aria-hidden="true">&#128188;</span> {{ $t('hero.projects') }}
+      <span class="flex items-center" aria-hidden="true">
+        <Icon name="noto:briefcase" class="size-[1.1em] shrink-0" />
+      </span>
+      {{ $t('hero.projects') }}
       <span aria-hidden="true">/</span>
-      <span aria-hidden="true">&#127942;</span> {{ $t('hero.achievements') }}
+      <span class="flex items-center" aria-hidden="true">
+        <Icon name="noto:trophy" class="size-[1.1em] shrink-0" />
+      </span>
+      {{ $t('hero.achievements') }}
     </h2>
     <ul class="space-y-3">
       <li v-for="project in featured" :key="project.id">

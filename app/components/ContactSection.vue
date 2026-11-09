@@ -152,7 +152,7 @@ onBeforeUnmount(() => clearTimeout(copiedTimer));
 
     <div class="container-page relative">
       <SectionTitle
-        emoji="&#9993;&#65039;"
+        emoji="noto:envelope"
         :title="contact.title"
         :subtitle="contact.intro"
       />

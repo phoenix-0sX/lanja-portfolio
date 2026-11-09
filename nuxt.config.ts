@@ -1,9 +1,21 @@
 import { techIcons, fallbackTechIcon } from './app/data/tech-icons';
 
+// Emoji are bundled as SVG (Noto set) so they render even on systems without an emoji font.
+const emojiIcons = [
+  'noto:waving-hand',
+  'noto:briefcase',
+  'noto:hammer-and-wrench',
+  'noto:person-raising-hand',
+  'noto:envelope',
+  'noto:open-file-folder',
+  'noto:trophy',
+];
+
 const bundledIcons = [
   ...new Set([
     ...Object.values(techIcons).map((t) => t.icon),
     fallbackTechIcon.icon,
+    ...emojiIcons,
   ]),
 ];
 
@@ -32,7 +44,7 @@ export default defineNuxtConfig({
 
   icon: {
     // Icons come from locally installed Iconify sets: no runtime API calls.
-    serverBundle: 'local',
+    serverBundle: { collections: ['logos', 'lucide'] },
     // Icons are picked dynamically from data, so list them explicitly.
     clientBundle: { scan: true, icons: bundledIcons },
   },
