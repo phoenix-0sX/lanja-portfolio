@@ -241,7 +241,16 @@
     "copy": "Copy",
     "copied": "Copied!",
     "copyItem": "Copy {item}",
-    "sending": "Sending…"
+    "sending": "Sending…",
+    "errors": {
+      "required": "This field is required.",
+      "email": "Please enter your email address.",
+      "emailInvalid": "Please enter a valid email address, like yourname{'@'}gmail.com.",
+      "message": "Please write a message of at least {min} characters.",
+      "emailFake": "This email address looks incorrect or made up. Please use your real address so I can reply to you.",
+      "emailDisposable": "Temporary or disposable email addresses aren't accepted. Please use your permanent address so I can reply to you."
+    },
+    "fixErrors": "Please fix the highlighted fields."
   },
   "footer": {
     "rights": "© {year} {name}. Built with Nuxt & Tailwind CSS."

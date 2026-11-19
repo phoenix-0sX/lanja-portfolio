@@ -77,6 +77,9 @@
   .field {
     @apply w-full rounded-lg border border-line bg-page px-3.5 py-2.5 text-sm text-ink placeholder:text-soft/70 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30;
   }
+  .field-invalid {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500/30 dark:border-red-400;
+  }
 }
 
 /* Scroll reveal (class added by the v-reveal directive) */
@@ -111,7 +114,12 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.35) 50%, transparent 70%);
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgb(255 255 255 / 0.35) 50%,
+    transparent 70%
+  );
   transform: translateX(-120%);
 }
 .btn-primary:not([aria-disabled='true']):hover::after {

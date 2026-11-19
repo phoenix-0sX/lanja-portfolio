@@ -16,7 +16,8 @@ npm run generate   # static site -> .output/public
 ## Before publishing
 
 - **CV**: put the PDF in `app/public/` and set `resume.fileUrl` in `portfolio.ts` (button is disabled until then).
-- **Contact form (Forminit)**: copy `.env.example` to `.env` (git-ignored) and set `NUXT_FORMINIT_API_KEY`. In production set the same variable in your host's environment settings and deploy with `nuxt build` (a server/serverless preset), not `nuxt generate`. Form id: `NUXT_PUBLIC_FORMINIT_FORM_ID` (default in `nuxt.config.ts`).
+- **Contact form (Forminit)**: copy `.env.example` to `.env` (git-ignored) and set `NUXT_FORMINIT_API_KEY`. In production set the same variable in your host's environment settings and deploy with `nuxt build` (a server/serverless preset), not `nuxt generate`. Form id: `NUXT_PUBLIC_FORMINIT_FORM_ID` (default in `nuxt.config.ts`). The form accepts at most 2 submissions per browser session (`MAX_SUBMISSIONS` in `ContactSection.vue`); extra clicks are silently ignored.
+- **Email checks**: the browser validates required fields and the email (`shared/email-rules.ts`: format, a denylist of placeholder/mistyped addresses such as `test@…`, `…@example.com`, `…@gmial.com`), then the server route (`server/api/forminit.post.ts`) checks again and also rejects disposable domains using the `disposable-email-domains` package (`npm update disposable-email-domains` refreshes the list). To block more made-up addresses, add entries to `PLACEHOLDER_LOCALS`, `PLACEHOLDER_DOMAINS` or `TYPO_DOMAINS` in `shared/email-rules.ts`.
 - **Social links / project links / screenshots**: fill them in `portfolio.ts`.
 
 ## Languages (EN / FR)
