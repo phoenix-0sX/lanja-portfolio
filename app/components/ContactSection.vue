@@ -55,6 +55,7 @@ function incrementSubmissionCount() {
 
 type FieldName = 'name' | 'email' | 'subject' | 'message';
 const MIN_MESSAGE_LENGTH = 10;
+// Errors hold i18n KEYS (not translated text), so they follow the language when the visitor switches it.
 const errors = reactive<Record<FieldName, string>>({
   name: '',
   email: '',
@@ -63,25 +64,29 @@ const errors = reactive<Record<FieldName, string>>({
 });
 const submitted = ref(false); // once the visitor has tried to send, fields re-validate live as they type
 
-/** Maps a problem found by the shared email rules (or reported by the server) to a visitor-friendly message. */
-function emailProblemMessage(
+/** Maps a problem found by the shared email rules (or reported by the server) to an i18n key. */
+function emailProblemKey(
   problem: 'format' | 'placeholder' | 'disposable' | null,
 ): string {
-  if (problem === 'format') return t('contact.errors.emailInvalid');
-  if (problem === 'placeholder') return t('contact.errors.emailFake');
-  if (problem === 'disposable') return t('contact.errors.emailDisposable');
+  if (problem === 'format') return 'contact.errors.emailInvalid';
+  if (problem === 'placeholder') return 'contact.errors.emailFake';
+  if (problem === 'disposable') return 'contact.errors.emailDisposable';
   return '';
 }
+
+/** Visitor-facing text of a stored error key, in the current language. */
+const errorText = (field: FieldName) =>
+  errors[field] ? t(errors[field], { min: MIN_MESSAGE_LENGTH }) : '';
 
 function validateField(field: FieldName): string {
   const value = form[field].trim();
   if (field === 'email') {
-    if (!value) return t('contact.errors.email');
-    return emailProblemMessage(checkEmail(value));
+    if (!value) return 'contact.errors.email';
+    return emailProblemKey(checkEmail(value));
   }
-  if (!value) return t('contact.errors.required');
+  if (!value) return 'contact.errors.required';
   if (field === 'message' && value.length < MIN_MESSAGE_LENGTH)
-    return t('contact.errors.message', { min: MIN_MESSAGE_LENGTH });
+    return 'contact.errors.message';
   return '';
 }
 
@@ -131,7 +136,7 @@ async function submit() {
   if (error?.error === 'EMAIL_REJECTED') {
     decrementSubmissionCount();
     status.value = 'idle';
-    errors.email = emailProblemMessage(
+    errors.email = emailProblemKey(
       (error as { reason?: 'format' | 'placeholder' | 'disposable' }).reason ??
         'placeholder',
     );
@@ -330,7 +335,7 @@ onBeforeUnmount(() => clearTimeout(copiedTimer));
                 class="mt-1.5 text-sm text-red-600 dark:text-red-400"
                 role="alert"
               >
-                {{ errors.name }}
+                {{ errorText('name') }}
               </p>
             </div>
             <div>
@@ -362,7 +367,7 @@ onBeforeUnmount(() => clearTimeout(copiedTimer));
                 class="mt-1.5 text-sm text-red-600 dark:text-red-400"
                 role="alert"
               >
-                {{ errors.email }}
+                {{ errorText('email') }}
               </p>
             </div>
           </div>
@@ -392,7 +397,7 @@ onBeforeUnmount(() => clearTimeout(copiedTimer));
               class="mt-1.5 text-sm text-red-600 dark:text-red-400"
               role="alert"
             >
-              {{ errors.subject }}
+              {{ errorText('subject') }}
             </p>
           </div>
           <div>
@@ -420,7 +425,7 @@ onBeforeUnmount(() => clearTimeout(copiedTimer));
               class="mt-1.5 text-sm text-red-600 dark:text-red-400"
               role="alert"
             >
-              {{ errors.message }}
+              {{ errorText('message') }}
             </p>
           </div>
 
