@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Forminit } from 'forminit';
+import { checkEmail } from '#shared/email-rules';
 
 const { t } = useI18n();
 const portfolio = usePortfolio();
@@ -34,6 +35,15 @@ function readSubmissionCount(): number {
   }
 }
 
+function decrementSubmissionCount() {
+  memoryCount = Math.max(0, readSubmissionCount() - 1);
+  try {
+    sessionStorage.setItem(SUBMISSIONS_KEY, String(memoryCount));
+  } catch {
+    /* storage unavailable: the in-memory counter still applies */
+  }
+}
+
 function incrementSubmissionCount() {
   memoryCount = readSubmissionCount() + 1;
   try {
@@ -43,25 +53,91 @@ function incrementSubmissionCount() {
   }
 }
 
+type FieldName = 'name' | 'email' | 'subject' | 'message';
+const MIN_MESSAGE_LENGTH = 10;
+const errors = reactive<Record<FieldName, string>>({
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+});
+const submitted = ref(false); // once the visitor has tried to send, fields re-validate live as they type
+
+/** Maps a problem found by the shared email rules (or reported by the server) to a visitor-friendly message. */
+function emailProblemMessage(
+  problem: 'format' | 'placeholder' | 'disposable' | null,
+): string {
+  if (problem === 'format') return t('contact.errors.emailInvalid');
+  if (problem === 'placeholder') return t('contact.errors.emailFake');
+  if (problem === 'disposable') return t('contact.errors.emailDisposable');
+  return '';
+}
+
+function validateField(field: FieldName): string {
+  const value = form[field].trim();
+  if (field === 'email') {
+    if (!value) return t('contact.errors.email');
+    return emailProblemMessage(checkEmail(value));
+  }
+  if (!value) return t('contact.errors.required');
+  if (field === 'message' && value.length < MIN_MESSAGE_LENGTH)
+    return t('contact.errors.message', { min: MIN_MESSAGE_LENGTH });
+  return '';
+}
+
+const fieldNames: FieldName[] = ['name', 'email', 'subject', 'message'];
+
+/** Validates every field, fills `errors`, focuses the first invalid one. Returns true when the form is valid. */
+function validateForm(): boolean {
+  let firstInvalid: FieldName | undefined;
+  for (const field of fieldNames) {
+    errors[field] = validateField(field);
+    if (errors[field] && !firstInvalid) firstInvalid = field;
+  }
+  if (firstInvalid) document.getElementById(`contact-${firstInvalid}`)?.focus();
+  return !firstInvalid;
+}
+
+function onFieldInput(field: FieldName) {
+  if (submitted.value || errors[field]) errors[field] = validateField(field);
+}
+
 async function submit() {
   // Honeypot: real visitors never fill this hidden field.
   if (form.website) return;
+
+  // Validation first: an invalid form is never sent and never uses up one of the session's submissions.
+  submitted.value = true;
+  status.value = 'idle';
+  if (!validateForm()) return;
 
   // Session limit reached: swallow the click, send nothing.
   if (readSubmissionCount() >= MAX_SUBMISSIONS) return;
 
   incrementSubmissionCount();
-
   status.value = 'sending';
 
   // Field names follow Forminit's `fi-<block>-<name>` convention.
   const data = new FormData();
-  data.append('fi-sender-fullName', form.name);
-  data.append('fi-sender-email', form.email);
-  data.append('fi-text-subject', form.subject);
-  data.append('fi-text-message', form.message);
+  data.append('fi-sender-fullName', form.name.trim());
+  data.append('fi-sender-email', form.email.trim());
+  data.append('fi-text-subject', form.subject.trim());
+  data.append('fi-text-message', form.message.trim());
 
   const { error } = await forminit.submit(config.public.forminitFormId, data);
+
+  // The server refused the email (placeholder, typo'd provider, disposable domain): show it under the field.
+  // Nothing reached Forminit, so give the attempt back.
+  if (error?.error === 'EMAIL_REJECTED') {
+    decrementSubmissionCount();
+    status.value = 'idle';
+    errors.email = emailProblemMessage(
+      (error as { reason?: 'format' | 'placeholder' | 'disposable' }).reason ??
+        'placeholder',
+    );
+    document.getElementById('contact-email')?.focus();
+    return;
+  }
 
   if (error) {
     // Details for the browser console (e.g. a field name Forminit does not know); visitors get the friendly message.
@@ -78,6 +154,8 @@ async function submit() {
     message: '',
     website: '',
   });
+  submitted.value = false;
+  for (const field of fieldNames) errors[field] = '';
 }
 
 const details = computed(() => [
@@ -215,7 +293,6 @@ onBeforeUnmount(() => clearTimeout(copiedTimer));
           <p class="sr-only" role="status" aria-live="polite">
             {{ copiedKey ? t('contact.copied') : '' }}
           </p>
-
           <SocialLinks :links="contact.socialLinks" />
         </div>
 
@@ -226,48 +303,126 @@ onBeforeUnmount(() => clearTimeout(copiedTimer));
           @submit.prevent="submit"
         >
           <div class="grid gap-4 sm:grid-cols-2">
-            <label class="block text-sm font-medium text-ink">
-              {{ t('contact.name') }}
+            <div>
+              <label
+                for="contact-name"
+                class="block text-sm font-medium text-ink"
+                >{{ t('contact.name') }}</label
+              >
               <input
-                v-model.trim="form.name"
+                id="contact-name"
+                v-model="form.name"
                 class="field mt-1.5"
+                :class="errors.name ? 'field-invalid' : ''"
                 type="text"
                 name="name"
                 autocomplete="name"
                 required
+                :aria-invalid="errors.name ? 'true' : undefined"
+                :aria-describedby="
+                  errors.name ? 'contact-name-error' : undefined
+                "
+                @input="onFieldInput('name')"
               />
-            </label>
-            <label class="block text-sm font-medium text-ink">
-              {{ t('contact.emailAddress') }}
+              <p
+                v-if="errors.name"
+                id="contact-name-error"
+                class="mt-1.5 text-sm text-red-600 dark:text-red-400"
+                role="alert"
+              >
+                {{ errors.name }}
+              </p>
+            </div>
+            <div>
+              <label
+                for="contact-email"
+                class="block text-sm font-medium text-ink"
+                >{{ t('contact.emailAddress') }}</label
+              >
               <input
-                v-model.trim="form.email"
+                id="contact-email"
+                v-model="form.email"
                 class="field mt-1.5"
+                :class="errors.email ? 'field-invalid' : ''"
                 type="email"
                 name="email"
                 autocomplete="email"
+                inputmode="email"
                 required
+                :aria-invalid="errors.email ? 'true' : undefined"
+                :aria-describedby="
+                  errors.email ? 'contact-email-error' : undefined
+                "
+                @input="onFieldInput('email')"
+                @blur="form.email && (errors.email = validateField('email'))"
               />
-            </label>
+              <p
+                v-if="errors.email"
+                id="contact-email-error"
+                class="mt-1.5 text-sm text-red-600 dark:text-red-400"
+                role="alert"
+              >
+                {{ errors.email }}
+              </p>
+            </div>
           </div>
-          <label class="block text-sm font-medium text-ink">
-            {{ t('contact.subject') }}
+          <div>
+            <label
+              for="contact-subject"
+              class="block text-sm font-medium text-ink"
+              >{{ t('contact.subject') }}</label
+            >
             <input
-              v-model.trim="form.subject"
+              id="contact-subject"
+              v-model="form.subject"
               class="field mt-1.5"
+              :class="errors.subject ? 'field-invalid' : ''"
               type="text"
               name="subject"
               required
+              :aria-invalid="errors.subject ? 'true' : undefined"
+              :aria-describedby="
+                errors.subject ? 'contact-subject-error' : undefined
+              "
+              @input="onFieldInput('subject')"
             />
-          </label>
-          <label class="block text-sm font-medium text-ink">
-            {{ t('contact.message') }}
+            <p
+              v-if="errors.subject"
+              id="contact-subject-error"
+              class="mt-1.5 text-sm text-red-600 dark:text-red-400"
+              role="alert"
+            >
+              {{ errors.subject }}
+            </p>
+          </div>
+          <div>
+            <label
+              for="contact-message"
+              class="block text-sm font-medium text-ink"
+              >{{ t('contact.message') }}</label
+            >
             <textarea
-              v-model.trim="form.message"
+              id="contact-message"
+              v-model="form.message"
               class="field mt-1.5 min-h-36 resize-y"
+              :class="errors.message ? 'field-invalid' : ''"
               name="message"
               required
+              :aria-invalid="errors.message ? 'true' : undefined"
+              :aria-describedby="
+                errors.message ? 'contact-message-error' : undefined
+              "
+              @input="onFieldInput('message')"
             />
-          </label>
+            <p
+              v-if="errors.message"
+              id="contact-message-error"
+              class="mt-1.5 text-sm text-red-600 dark:text-red-400"
+              role="alert"
+            >
+              {{ errors.message }}
+            </p>
+          </div>
 
           <!-- Honeypot -->
           <input
