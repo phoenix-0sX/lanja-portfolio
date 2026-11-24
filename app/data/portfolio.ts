@@ -57,7 +57,15 @@ export const base: PortfolioBase = {
     {
       id: 'intermediate',
       tone: 'amber',
-      skills: ['Python', 'Flask', 'FastAPI', 'Docker', 'GraphQL', 'Nginx'],
+      skills: [
+        'Python',
+        'Flask',
+        'FastAPI',
+        'Docker',
+        'GraphQL',
+        'Nginx',
+        'Ionic Capacitor',
+      ],
     },
     {
       id: 'academic',
@@ -67,7 +75,6 @@ export const base: PortfolioBase = {
         'React.js',
         'React Native',
         'Flutter',
-        'Ionic Capacitor',
         'Node.js',
         'Symfony',
         'CodeIgniter',
@@ -96,6 +103,7 @@ export const base: PortfolioBase = {
         'Git',
         'GraphQL',
         'Docker',
+        'Ionic Capacitor',
       ],
     },
     {
@@ -175,6 +183,7 @@ export const base: PortfolioBase = {
         'GraphQL',
         'Docker',
         'Git',
+        'Ionic Capacitor',
       ],
       link: '',
       featured: true,

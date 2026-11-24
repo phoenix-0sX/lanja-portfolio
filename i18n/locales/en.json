@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Lanja {'|'} Computer Engineer & Full-Stack Developer",
-    "description": "Portfolio of Lanja, a Madagascar-based software developer specializing in web application development, frontend engineering, APIs, and database-driven systems.",
-    "jobTitle": "Computer Engineer {'|'} Full-Stack Developer"
+    "title": "Lanja {'|'} Full-Stack Developer & Software Engineer",
+    "description": "Portfolio of Lanja, a Full-Stack developer in Madagascar. Over 4 years of experience building web apps with JavaScript/TypeScript and PHP, backend services with Python, API integration, and database management.",
+    "jobTitle": "Full-Stack Developer {'|'} Software Engineer"
   },
   "nav": {
     "home": "Home",
@@ -34,21 +34,21 @@
     "portrait": "Portrait of Lanja, smiling with a hand on his chin"
   },
   "hero": {
-    "greeting": "Welcome visitor,",
-    "intro": "My name is",
-    "role": "I am a web-apps and software developer",
-    "paragraph": "With a strong passion for building modern, scalable web applications. Dedicated to creating innovative solutions, I love crafting clean, efficient, and maintainable code that brings ideas to life.",
+    "greeting": "Hi there,",
+    "intro": "I'm",
+    "role": "I build web apps and the software behind them.",
+    "paragraph": "I'm a full-stack developer with 4+ years of experience. I work with teams and clients on websites, internal tools and APIs",
     "tags": [
-      "Front-end",
-      "Back-end",
-      "Full-stack",
+      "Frontend",
+      "Backend",
+      "Full-Stack Development",
+      "JavaScript & TypeScript",
+      "PHP",
+      "Python",
       "API Integration",
-      "Database Management",
-      "Software architecture",
-      "Project management",
-      "Web",
-      "Mobile",
-      "Desktop"
+      "Web Applications",
+      "PWA",
+      "Database Administration"
     ],
     "downloadCv": "Download CV",
     "cvSoon": "CV coming soon",
@@ -59,9 +59,9 @@
   },
   "about": {
     "title": "About me",
-    "shortBio": "I am {fullname}, commonly known as {name}, a passionate full-stack developer specializing in building modern, scalable web applications.",
-    "fullBio": "Dedicated to creating innovative solutions, I love crafting clean, efficient, and maintainable code that brings ideas to life, whether it is a dynamic frontend interface or a powerful backend system and API.",
-    "summary": "Software developer with a degree from the École Nationale d'Informatique (ENI), Fianarantsoa, Madagascar, specializing in software engineering and databases, with over three years of experience in web application development, platform design, and database management.",
+    "shortBio": "My name is {fullname}, or simply {name} to those who know me. I'm a Full-Stack Developer based in Madagascar.",
+    "fullBio": "I like taking a real need from a team or a client and turning it into something that works. I care about readable code, fixing the actual cause of a problem, and leaving things easier to maintain than I found them.",
+    "summary": "I'm comfortable on both sides of an application: frontend, backend, APIs and the database underneath. JavaScript/TypeScript and PHP are where I'm strongest, with Python as a useful extra.",
     "educationTitle": "Education",
     "languagesTitle": "Languages",
     "interestsTitle": "Interests",
@@ -92,41 +92,48 @@
     "other": {
       "linux": {
         "name": "Linux",
-        "description": "Linux enthusiast, comfortable on Linux and Windows."
+        "description": "Linux fan, and just as comfortable on Windows."
       },
       "scrum": {
         "name": "Agile Scrum",
-        "description": "Agile development and issue management."
+        "description": "Working in sprints and tracking work through tickets."
       },
-      "uml": { "name": "UML", "description": "Software modeling." },
+      "uml": {
+        "name": "UML",
+        "description": "Modeling software before building it."
+      },
       "database": {
         "name": "Database design",
-        "description": "Data consistency, reliability and management."
+        "description": "Schemas that keep data consistent."
       },
       "performance": {
         "name": "Performance & stability",
-        "description": "Feature delivery, bug fixing and optimization."
+        "description": "Shipping features, fixing bugs and making things faster."
       },
       "deployment": {
         "name": "Deployment",
-        "description": "Docker-based environments and automated deployment."
+        "description": "Docker setups and automated deployments."
       }
     }
   },
   "skills": {
     "title": "Tech stack / Skills",
-    "subtitle": "Grouped by how much I use each tool and for how long.",
+    "subtitle": "Grouped by proficiency and practical experience.",
     "restApi": "REST API",
     "tiers": {
-      "expert": ["Most used", "expert", "> 3 years"],
-      "advanced": ["advanced", "> 2 years"],
-      "intermediate": ["intermediate", "> 1 year"],
-      "academic": ["academic", "learning", "exploring"]
+      "expert": ["Core strength", "Expert", "Primary technologies"],
+      "advanced": ["Advanced", "Regular professional use"],
+      "intermediate": ["Intermediate", "Practical experience"],
+      "academic": [
+        "Familiar",
+        "Learning",
+        "Foundational or basic understanding"
+      ]
     }
   },
   "experience": {
-    "title": "Job Experience",
-    "subtitle": "Where I have worked and what I built there.",
+    "title": "Professional Experience",
+    "subtitle": "Selected roles, responsibilities and contributions across my professional experience.",
     "current": "Current",
     "internship": "Internship",
     "now": "Now",
@@ -135,55 +142,58 @@
     "items": {
       "neoshore-frontend-developer": {
         "jobTitle": "Frontend Vue.js Developer",
-        "summary": "Contributed to the development and improvement of a Vue.js web application for an offshore client, helping the solution reach 75% production within two years.",
+        "summary": "Worked on TheGreenshot's web app: new frontend features, bug fixes, and ongoing maintenance of its Progressive Web App (PWA).",
         "responsibilities": [
-          "Implemented features and optimized application performance.",
-          "Fixed bugs and improved product stability.",
-          "Participated in Agile development, issue management, and continuous delivery of improvements."
+          "Built and improved Vue.js frontend features based on product requirements and development tickets.",
+          "Fixed bugs and made the app more stable and easier to use.",
+          "Tested new features and fixes before delivery.",
+          "Independently handled the ongoing maintenance of the application's PWA component, built with Ionic and Capacitor.",
+          "Worked in an Agile team: tickets, regular communication, small iterations.",
+          "Contributed to approximately 75% of the planned features and bug fixes, alongside testing and maintenance."
         ],
         "metric": "75%",
-        "achievement": "solution in production within two years"
+        "achievement": "of the planned features and bug fixes I contributed to"
       },
       "kontiki-full-stack-developer": {
-        "jobTitle": "Full-stack Developer",
-        "summary": "Helped automate the creation and management of campaign websites and centralize marketing data, improving internal operational efficiency.",
+        "jobTitle": "Full-Stack Developer",
+        "summary": "Built internal tools to automate marketing campaigns: generating mini-sites and collecting campaign data in one place.",
         "responsibilities": [
-          "Developed a Laravel platform to generate blog-style campaign mini-sites, including code generation and automatic server deployment.",
-          "Built a Nuxt.js web application inspired by Google Sheets to manage and visualize campaign data collected through APIs.",
-          "Implemented Flask backend services for automated campaign data collection and processing.",
-          "Managed PostgreSQL and MySQL databases for different applications.",
-          "Used Docker to standardize environments and support platform deployment."
+          "Built a Laravel platform that generates blog-style campaign mini-sites from templates and form data, with code export and deployment to a server.",
+          "Developed a Nuxt.js app, similar to Google Sheets, to browse and manage the campaign data we pulled from APIs.",
+          "Wrote Python/FastAPI services that collect and process campaign data automatically.",
+          "Designed and managed the relational databases behind these apps.",
+          "Used Docker to standardize development environments and facilitate platform deployment."
         ],
         "metric": "3x",
-        "achievement": "internal operational efficiency"
+        "achievement": "estimated improvement in internal team efficiency"
       },
       "kontiki-internship": {
-        "jobTitle": "Intern Full-stack Developer",
-        "summary": "Worked on internal applications and web services to improve integration and efficiency of company tools.",
+        "jobTitle": "Full-Stack Developer Intern",
+        "summary": "Worked on internal apps and web services, on both frontend and backend, to connect the company's tools and make them more useful.",
         "responsibilities": [
-          "Developed internal applications and platforms across frontend and backend.",
-          "Implemented APIs and web services to integrate and extend existing tools.",
-          "Delivered features, bug fixes, and improvements for internal mini-projects.",
-          "Participated in database design and management to support data consistency and reliability."
+          "Built frontend and backend features for internal apps.",
+          "Wrote web services and APIs to connect existing tools and add new features to them.",
+          "Worked on several projects: new features, bug fixes and improvements to internal tools.",
+          "Helped design and manage the databases so data stayed consistent."
         ],
-        "metric": "Up to 40%",
-        "achievement": "better integration and efficiency in 3 months"
+        "metric": "6 months",
+        "achievement": "of full-stack internship experience"
       },
       "dgi-php-internship": {
-        "jobTitle": "Intern PHP Developer",
-        "summary": "Contributed to a platform for managing information related to minimum tax payments and improving the taxpayer consultation process.",
+        "jobTitle": "PHP Developer Intern",
+        "summary": "Worked on a platform that makes each taxpayer's minimum tax amount easier to look up and manage.",
         "responsibilities": [
-          "Designed and developed a platform to manage the tax payment system.",
-          "Implemented a REST API web service to retrieve and display minimum tax due for each taxpayer.",
-          "Participated in database design and tax data management.",
-          "Structured the application using Laravel framework best practices."
+          "Designed and built features for managing and looking up tax information.",
+          "Built a REST API that returns the minimum tax amount due for each taxpayer.",
+          "Helped design the database and manage the tax data.",
+          "Structured the application following Laravel conventions."
         ]
       }
     }
   },
   "projects": {
     "title": "Projects & Achievements",
-    "subtitle": "Selected professional and internship projects.",
+    "subtitle": "A few projects from work and internships.",
     "problem": "Problem",
     "solution": "Solution",
     "types": {
@@ -195,39 +205,39 @@
     "items": {
       "campaign-minisite-generator": {
         "title": "Automated Campaign Mini-site Generator",
-        "description": "A Laravel-based platform that automates the generation of blog-style mini-sites for marketing campaigns, including code generation and automatic server deployment.",
-        "problem": "Creating and deploying campaign mini-sites manually takes time and creates repetitive work.",
-        "solution": "Automated mini-site generation and deployment through a Laravel platform."
+        "description": "A Laravel platform that generates blog-style campaign mini-sites from reusable templates and form data. The code can be exported or deployed straight to a server.",
+        "problem": "Each campaign required a developer to create and deploy its mini-site manually, which took time and made the process repetitive.",
+        "solution": "Pick a template, fill in a form, and the mini-site is generated. Export the code or deploy it to a server, no developer needed."
       },
       "campaign-data-dashboard": {
         "title": "Campaign Data Management Dashboard",
-        "description": "A Nuxt.js web application inspired by Google Sheets for managing and visualizing marketing campaign data collected via APIs.",
-        "problem": "Campaign information collected from APIs needed a more centralized and accessible interface.",
-        "solution": "A spreadsheet-inspired web application for centralized campaign data management and visualization."
+        "description": "A Nuxt.js app, built like a spreadsheet, for managing and visualizing the marketing campaign data collected through APIs.",
+        "problem": "Campaign data came from several sources and there was no single place to view and manage it.",
+        "solution": "A spreadsheet-style interface that anyone familiar with Excel or Google Sheets can pick up quickly, to organize and visualize the data."
       },
       "tax-minimum-payment-platform": {
         "title": "Minimum Tax Payment Information Platform",
-        "description": "A platform to help manage minimum tax payment information and let taxpayers retrieve the amount due through a REST API.",
-        "problem": "Taxpayers needed a more efficient way to consult minimum tax payment information.",
+        "description": "A platform for managing minimum tax payment information, with a REST API that returns the amount each taxpayer owes.",
+        "problem": "Looking up a taxpayer's minimum tax payment took more effort than it should.",
         "solution": "A Laravel platform with a REST API and PostgreSQL database integration."
       },
       "neoshore-vuejs-application": {
-        "title": "Offshore Client Web Application",
-        "description": "Frontend features, performance improvements, bug fixes and stability work for a Vue.js web application that reached 75% production within two years.",
-        "problem": "The offshore web application required continuous frontend development, performance improvements and bug fixes to reach production readiness while maintaining stability throughout its development.",
-        "solution": "Incremental frontend features and stability improvements delivered as part of an Agile team."
+        "title": "TheGreenshot Web Application",
+        "description": "Frontend work in Vue.js and TypeScript: new features, bug fixes, testing, and maintenance of the app's Ionic/Capacitor PWA.",
+        "problem": "The app needed steady frontend work and bug fixing to stay reliable and pleasant to use.",
+        "solution": "Delivered iterative frontend improvements, validated features and fixes, and looked after the PWA on my own, inside an Agile team."
       },
       "automated-campaign-data-processing": {
         "title": "Automated Campaign Data Collection and Processing",
-        "description": "Backend services that automate the collection and processing of campaign data.",
-        "problem": "Campaign data collection and processing involved repetitive operational tasks.",
-        "solution": "Python Flask backend services for automated data collection and processing."
+        "description": "Python/FastAPI services that collect and process marketing campaign data automatically.",
+        "problem": "Collecting campaign data meant a lot of repetitive manual work.",
+        "solution": "I built backend services with Python and FastAPI to automate the collection and processing."
       }
     }
   },
   "contact": {
-    "title": "Let's build something together",
-    "intro": "Have a project, opportunity, or idea to discuss? Feel free to get in touch.",
+    "title": "Want to work together?",
+    "intro": "Have a project, a job offer or just a question? Send me a message and I'll reply as soon as I can.",
     "email": "Email",
     "phone": "Phone",
     "location": "Location",
@@ -236,8 +246,8 @@
     "subject": "Subject",
     "message": "Message",
     "send": "Send message",
-    "success": "Thank you for your message. I will get back to you as soon as possible.",
-    "error": "Something went wrong. Please email me directly instead.",
+    "success": "Thanks, I got your message and I'll reply soon.",
+    "error": "Sorry, that didn't go through. Please email me directly instead.",
     "copy": "Copy",
     "copied": "Copied!",
     "copyItem": "Copy {item}",
@@ -247,8 +257,8 @@
       "email": "Please enter your email address.",
       "emailInvalid": "Please enter a valid email address, like yourname{'@'}gmail.com.",
       "message": "Please write a message of at least {min} characters.",
-      "emailFake": "This email address looks incorrect or made up. Please use your real address so I can reply to you.",
-      "emailDisposable": "Temporary or disposable email addresses aren't accepted. Please use your permanent address so I can reply to you."
+      "emailFake": "This email address doesn't look right. Please use a real one so I can reply to you.",
+      "emailDisposable": "Temporary email addresses aren't accepted. Please use a permanent one so I can reply to you."
     },
     "fixErrors": "Please fix the highlighted fields."
   },

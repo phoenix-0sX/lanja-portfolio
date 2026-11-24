@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n();
+const { locale, t } = useI18n();
 const portfolio = usePortfolio();
 const hero = computed(() => portfolio.value.hero);
 const resume = computed(() => portfolio.value.resume);
@@ -29,11 +29,9 @@ const hasCv = computed(() => resume.value.fileUrl.trim().length > 0);
               <Icon name="noto:waving-hand" class="size-[0.9em]" />
             </span>
             {{ hero.greeting }}
+            <HeroIntro v-if="locale === 'en'" />
           </span>
-          <span class="mt-1 block">
-            {{ hero.intro }}
-            <span class="text-accent">{{ portfolio.meta.name }}</span>
-          </span>
+          <HeroIntro v-if="locale === 'fr'" class="mt-1 block" />
           <span
             class="mt-2 block text-xl font-light text-soft sm:text-2xl xl:text-2xl"
             >{{ hero.role }}</span
