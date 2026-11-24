@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Lanja {'|'} Ingénieur en informatique & développeur Full-Stack",
-    "description": "Portfolio de Lanja, développeur logiciel basé à Madagascar, spécialisé dans le développement d'applications web, l'ingénierie frontend, les API et les systèmes pilotés par bases de données.",
-    "jobTitle": "Ingénieur en informatique {'|'} Développeur Full-Stack"
+    "title": "Lanja {'|'} Développeur Full-Stack & ingénieur en informatique",
+    "description": "Portfolio de Lanja, développeur Full-Stack basé à Madagascar, avec plus de 4 ans d'expérience dans le développement d'applications web avec JavaScript/TypeScript, PHP, la création de services backend avec Python, l'intégration d'API et la gestion de bases de données.",
+    "jobTitle": "Développeur Full-Stack {'|'} Ingénieur en informatique"
   },
   "nav": {
     "home": "Accueil",
@@ -34,21 +34,21 @@
     "portrait": "Portrait de Lanja, souriant, la main sur le menton"
   },
   "hero": {
-    "greeting": "Bienvenue visiteur,",
+    "greeting": "Bonjour,",
     "intro": "Je m'appelle",
-    "role": "Je suis développeur d'applications web et de logiciels",
-    "paragraph": "Passionné par la création d'applications web modernes et évolutives. Dédié à la conception de solutions innovantes, j'aime écrire un code propre, efficace et maintenable qui donne vie aux idées.",
+    "role": "Je développe des applications web et les systèmes qui les font fonctionner.",
+    "paragraph": "Je suis développeur full-stack avec plus de 4 ans d'expérience. Je travaille avec des équipes et des clients sur des sites web, des outils internes et des API.",
     "tags": [
-      "Front-end",
-      "Back-end",
-      "Full-stack",
+      "Frontend",
+      "Backend",
+      "Développement Full-Stack",
+      "JavaScript & TypeScript",
+      "PHP",
+      "Python",
       "Intégration d'API",
-      "Gestion de bases de données",
-      "Architecture logicielle",
-      "Gestion de projet",
-      "Web",
-      "Mobile",
-      "Desktop"
+      "Applications web",
+      "PWA",
+      "Administration de bases de données"
     ],
     "downloadCv": "Télécharger le CV",
     "cvSoon": "CV bientôt disponible",
@@ -59,9 +59,9 @@
   },
   "about": {
     "title": "À propos de moi",
-    "shortBio": "Je suis {fullname}, connu sous le nom de {name}, développeur full-stack passionné par la création d'applications web modernes et évolutives.",
-    "fullBio": "Dédié à la conception de solutions innovantes, j'aime écrire un code propre, efficace et maintenable qui donne vie aux idées, qu'il s'agisse d'une interface frontend dynamique ou d'un système backend et d'une API performants.",
-    "summary": "Développeur logiciel diplômé de l'École nationale d'informatique (ENI), spécialisé en génie logiciel et bases de données, avec plus de 3 ans d'expérience dans le développement d'applications web, la conception de plateformes et la gestion de bases de données.",
+    "shortBio": "Je m'appelle {fullname}, ou plutôt {name} tout simplement pour ceux qui me connaissent. Je suis développeur full-stack, basé à Madagascar.",
+    "fullBio": "J'aime partir d'un vrai besoin d'une équipe ou d'un client pour en faire quelque chose qui fonctionne. Je tiens à un code lisible, à corriger la vraie cause d'un problème et à laisser les choses plus faciles à maintenir qu'avant mon passage.",
+    "summary": "Je suis à l'aise des deux côtés d'une application : frontend, backend, API et base de données. JavaScript/TypeScript et PHP sont mes points forts, avec Python en complément.",
     "educationTitle": "Diplômes",
     "languagesTitle": "Langues",
     "interestsTitle": "Centres d'intérêt",
@@ -92,41 +92,48 @@
     "other": {
       "linux": {
         "name": "Linux",
-        "description": "Passionné de Linux, à l'aise sous Linux et Windows."
+        "description": "Passionné de Linux, mais à l'aise sur Windows aussi."
       },
       "scrum": {
         "name": "Agile Scrum",
-        "description": "Développement Agile et gestion de tickets."
+        "description": "Travail par sprints et suivi du travail par tickets."
       },
-      "uml": { "name": "UML", "description": "Modélisation logicielle." },
+      "uml": {
+        "name": "UML",
+        "description": "Modéliser le logiciel avant de le construire."
+      },
       "database": {
         "name": "Conception de bases de données",
-        "description": "Cohérence, fiabilité et gestion des données."
+        "description": "Des structures de données cohérentes et fiables."
       },
       "performance": {
         "name": "Performance et stabilité",
-        "description": "Livraison de fonctionnalités, correction de bogues et optimisation."
+        "description": "Livrer des fonctionnalités, corriger des bogues et optimiser les performances."
       },
       "deployment": {
         "name": "Déploiement",
-        "description": "Environnements Docker et déploiement automatisé."
+        "description": "Environnements Docker et déploiements automatisés."
       }
     }
   },
   "skills": {
     "title": "Stack technique / Compétences",
-    "subtitle": "Regroupées selon la fréquence d'utilisation et l'ancienneté de chaque outil.",
+    "subtitle": "Regroupées selon le niveau de maîtrise et l'expérience pratique.",
     "restApi": "API REST",
     "tiers": {
-      "expert": ["Le plus utilisé", "expert", "> 3 ans"],
-      "advanced": ["avancé", "> 2 ans"],
-      "intermediate": ["intermédiaire", "> 1 an"],
-      "academic": ["académique", "en apprentissage", "en exploration"]
+      "expert": ["Points forts", "Expert", "Technologies principales"],
+      "advanced": ["Avancé", "Utilisation professionnelle régulière"],
+      "intermediate": ["Intermédiaire", "Expérience pratique"],
+      "academic": [
+        "Notions",
+        "En apprentissage",
+        "Connaissances fondamentales ou exploration"
+      ]
     }
   },
   "experience": {
     "title": "Expériences professionnelles",
-    "subtitle": "Où j'ai travaillé et ce que j'y ai construit.",
+    "subtitle": "Les postes occupés, les responsabilités exercées et les contributions réalisées au fil de mon parcours.",
     "current": "En cours",
     "internship": "Stage",
     "now": "Aujourd'hui",
@@ -134,56 +141,59 @@
     "hideDetails": "Masquer les détails",
     "items": {
       "neoshore-frontend-developer": {
-        "jobTitle": "Développeur frontend Vue.js",
-        "summary": "J'ai contribué activement au développement et à l'amélioration d'une application web Vue.js pour un client offshore, permettant à la solution d'atteindre 75 % de production en deux ans.",
+        "jobTitle": "Développeur Frontend Vue.js",
+        "summary": "J'ai travaillé sur l'application web de TheGreenshot : nouvelles fonctionnalités frontend, correction de bogues et la maintenance continue de sa Progressive Web App (PWA).",
         "responsibilities": [
-          "Implémentation de fonctionnalités et optimisation des performances de l'application.",
-          "Correction de bogues et amélioration de la stabilité du produit.",
-          "Participation active au cycle de développement Agile : gestion de tickets et livraison continue d'améliorations."
+          "Développement et amélioration de fonctionnalités frontend Vue.js à partir des besoins produit et des tickets de développement.",
+          "Correction de bogues pour rendre l'application plus stable et plus agréable à utiliser.",
+          "Tests des nouvelles fonctionnalités et des correctifs avant leur livraison.",
+          "Prise en charge autonome de la maintenance continue du volet PWA de l'application, développé avec Ionic et Capacitor.",
+          "Travail en équipe Agile : tickets, échanges réguliers, petites itérations.",
+          "Contribution à environ 75 % des fonctionnalités et des corrections de bogues prévues, en plus des tests et de la maintenance."
         ],
         "metric": "75 %",
-        "achievement": "de la solution en production en deux ans"
+        "achievement": "des fonctionnalités et corrections de bogues prévues, auxquelles j'ai contribué"
       },
       "kontiki-full-stack-developer": {
-        "jobTitle": "Développeur full-stack",
-        "summary": "J'ai permis à l'entreprise d'automatiser la création et la gestion de sites de campagne et de centraliser les données marketing, améliorant l'efficacité opérationnelle en interne.",
+        "jobTitle": "Développeur Full-Stack",
+        "summary": "Création d'outils internes pour automatiser les campagnes marketing : génération de mini-sites et centralisation des données de campagne.",
         "responsibilities": [
-          "Développement d'une plateforme avec Laravel permettant d'automatiser la génération de mini-sites (type blog) pour des campagnes marketing, avec génération de code et déploiement automatique sur serveur.",
-          "Conception d'une application web avec Nuxt.js inspirée de Google Sheets, facilitant la gestion et la visualisation des données de campagnes collectées via API.",
-          "Implémentation de services backend avec Flask pour la collecte et le traitement automatisés des données issues des campagnes.",
-          "Gestion des bases de données avec PostgreSQL et MySQL selon les besoins des différentes applications.",
-          "Utilisation de Docker pour standardiser les environnements et faciliter le déploiement des plateformes."
+          "Création d'une plateforme Laravel qui génère des mini-sites de campagne de type blog à partir de modèles et de données de formulaire, avec export du code et déploiement sur un serveur.",
+          "Développement d'une application Nuxt.js, proche de Google Sheets, pour consulter et gérer les données de campagne récupérées via des API.",
+          "Développement de services backend avec Python/FastAPI pour la collecte et le traitement automatisés des données de campagne.",
+          "Conception et gestion des bases de données relationnelles derrière ces applications.",
+          "Utilisation de Docker pour standardiser les environnements de développement et faciliter le déploiement."
         ],
         "metric": "3x",
-        "achievement": "d'efficacité opérationnelle en interne"
+        "achievement": "gain estimé d'efficacité pour les équipes internes"
       },
       "kontiki-internship": {
-        "jobTitle": "Stagiaire développeur full-stack",
-        "summary": "Ma participation au développement d'applications internes et de webservices a facilité l'intégration et l'efficacité des outils utilisés par l'entreprise.",
+        "jobTitle": "Stagiaire Développeur Full-Stack",
+        "summary": "Travail sur des applications internes et des services web, côté frontend comme backend, pour relier les outils de l'entreprise et les rendre plus utiles.",
         "responsibilities": [
-          "Développement d'applications et de plateformes internes de l'entreprise, sur le frontend et le backend.",
-          "Implémentation de services web (API / webservices) permettant l'intégration et l'extension de fonctionnalités d'outils existants.",
-          "Contribution à plusieurs mini-projets : développement de fonctionnalités, corrections de bogues et amélioration d'outils internes.",
-          "Participation à la conception et à la gestion de bases de données pour assurer la cohérence et la fiabilité des données."
+          "Développement de fonctionnalités frontend et backend pour des applications internes.",
+          "Création de services web et d'API pour connecter des outils existants et leur ajouter de nouvelles fonctionnalités.",
+          "Participation à plusieurs projets : nouvelles fonctionnalités, corrections de bogues et améliorations d'outils internes.",
+          "Aide à la conception et à la gestion des bases de données pour garder des données cohérentes."
         ],
-        "metric": "Jusqu'à 40 %",
-        "achievement": "d'impact positif en trois mois"
+        "metric": "6 mois",
+        "achievement": "de stage en développement Full-Stack"
       },
       "dgi-php-internship": {
-        "jobTitle": "Stagiaire développeur PHP",
-        "summary": "J'ai travaillé sur une plateforme facilitant l'accès et la gestion des informations relatives au minimum de perception d'impôt, améliorant l'efficacité de la consultation pour les contribuables.",
+        "jobTitle": "Stagiaire Développeur PHP",
+        "summary": "Travail sur une plateforme qui facilite la consultation et la gestion du minimum de perception de chaque contribuable.",
         "responsibilities": [
-          "Conception et développement d'une plateforme de gestion du système de paiement d'impôts.",
-          "Implémentation d'un service web REST API pour récupérer et afficher le minimum de perception d'impôt à payer pour chaque contribuable.",
-          "Participation à la conception de la base de données et à la gestion des données fiscales.",
-          "Structuration de l'application selon les bonnes pratiques du framework Laravel."
+          "Conception et développement de fonctionnalités pour gérer et consulter les informations fiscales.",
+          "Création d'une API REST qui renvoie le minimum de perception dû par chaque contribuable.",
+          "Aide à la conception de la base de données et à la gestion des données fiscales.",
+          "Structuration de l'application selon les conventions de Laravel."
         ]
       }
     }
   },
   "projects": {
     "title": "Projets & Réalisations",
-    "subtitle": "Sélection de projets professionnels et de stages.",
+    "subtitle": "Quelques projets réalisés en entreprise et en stage.",
     "problem": "Problème",
     "solution": "Solution",
     "types": {
@@ -195,39 +205,39 @@
     "items": {
       "campaign-minisite-generator": {
         "title": "Générateur automatisé de mini-sites de campagne",
-        "description": "Une plateforme Laravel qui automatise la génération de mini-sites de type blog pour des campagnes marketing, avec génération de code et déploiement automatique sur serveur.",
-        "problem": "Créer et déployer des mini-sites de campagne manuellement prend du temps et engendre un travail répétitif.",
-        "solution": "Génération et déploiement automatisés des mini-sites grâce à une plateforme Laravel."
+        "description": "Une plateforme Laravel qui génère des mini-sites de campagne de type blog à partir de modèles réutilisables et de données de formulaire. Le code peut être exporté ou déployé directement sur un serveur.",
+        "problem": "Chaque campagne nécessitait qu'un développeur crée et déploie manuellement son mini-site, ce qui prenait du temps et rendait le processus répétitif.",
+        "solution": "On choisit un modèle, on remplit un formulaire, et le mini-site est généré. Le code s'exporte ou se déploie sur un serveur, sans développeur."
       },
       "campaign-data-dashboard": {
         "title": "Tableau de bord de gestion des données de campagne",
-        "description": "Une application web Nuxt.js inspirée de Google Sheets pour gérer et visualiser les données de campagnes marketing collectées via API.",
-        "problem": "Les informations de campagne collectées via API nécessitaient une interface plus centralisée et plus accessible.",
-        "solution": "Une application web inspirée des tableurs pour la gestion et la visualisation centralisées des données de campagne."
+        "description": "Une application Nuxt.js, conçue comme un tableur, pour gérer et visualiser les données de campagnes marketing récupérées via des API.",
+        "problem": "Les données de campagne venaient de plusieurs sources, sans endroit unique pour les consulter et les gérer.",
+        "solution": "Une interface façon tableur, facilement utilisable par toute personne habituée à Excel ou Google Sheets, pour organiser et visualiser les données."
       },
       "tax-minimum-payment-platform": {
         "title": "Plateforme d'information sur le minimum de perception",
-        "description": "Une plateforme pour gérer les informations sur le minimum de perception d'impôt et permettre aux contribuables de consulter le montant dû via une API REST.",
-        "problem": "Les contribuables avaient besoin d'un moyen plus efficace de consulter les informations sur le minimum de perception.",
+        "description": "Une plateforme pour gérer les informations sur le minimum de perception, avec une API REST qui renvoie le montant dû par chaque contribuable.",
+        "problem": "Consulter le minimum de perception d'un contribuable demandait plus d'efforts que nécessaire.",
         "solution": "Une plateforme Laravel avec API REST et intégration d'une base de données PostgreSQL."
       },
       "neoshore-vuejs-application": {
-        "title": "Application web pour client offshore",
-        "description": "Fonctionnalités frontend, améliorations de performance, corrections de bogues et travaux de stabilité pour une application web Vue.js ayant atteint 75 % de production en deux ans.",
-        "problem": "L'application web offshore nécessitait un développement frontend continu, des améliorations de performances et des corrections de bugs afin d’atteindre sa mise en production tout en garantissant sa stabilité tout au long de son développement.",
-        "solution": "Fonctionnalités frontend et améliorations de stabilité livrées progressivement au sein d'une équipe Agile."
+        "title": "Application web TheGreenshot",
+        "description": "Développement frontend en Vue.js et TypeScript : nouvelles fonctionnalités, corrections de bogues, tests et maintenance de la PWA Ionic/Capacitor de l'application.",
+        "problem": "L'application demandait un travail frontend régulier et des corrections de bogues pour rester fiable et agréable à utiliser.",
+        "solution": "Livraison progressive d'améliorations frontend, validation des fonctionnalités et correctifs, et prise en charge autonome de la maintenance du composant PWA au sein d'une équipe Agile."
       },
       "automated-campaign-data-processing": {
         "title": "Collecte et traitement automatisés des données de campagne",
-        "description": "Services backend qui automatisent la collecte et le traitement des données de campagne.",
-        "problem": "La collecte et le traitement des données de campagne reposaient sur des tâches opérationnelles répétitives.",
-        "solution": "Services backend Python Flask pour la collecte et le traitement automatisés des données."
+        "description": "Des services Python/FastAPI qui collectent et traitent automatiquement les données de campagnes marketing.",
+        "problem": "La collecte des données de campagne reposait sur beaucoup de tâches manuelles répétitives.",
+        "solution": "J'ai développé des services backend avec Python et FastAPI pour automatiser la collecte et le traitement."
       }
     }
   },
   "contact": {
-    "title": "Construisons quelque chose ensemble",
-    "intro": "Un projet, une opportunité ou une idée à discuter ? N'hésitez pas à me contacter.",
+    "title": "Envie de travailler ensemble ?",
+    "intro": "Un projet, une offre d'emploi ou simplement une question ? Écrivez-moi, je vous réponds dès que possible.",
     "email": "E-mail",
     "phone": "Téléphone",
     "location": "Localisation",
@@ -236,8 +246,8 @@
     "subject": "Objet",
     "message": "Message",
     "send": "Envoyer le message",
-    "success": "Merci pour votre message. Je vous répondrai dans les meilleurs délais.",
-    "error": "Une erreur est survenue. Veuillez plutôt m'écrire directement par e-mail.",
+    "success": "Merci, j'ai bien reçu votre message. Je vous réponds bientôt.",
+    "error": "Désolé, l'envoi a échoué. Écrivez-moi plutôt directement par e-mail.",
     "copy": "Copier",
     "copied": "Copié !",
     "copyItem": "Copier : {item}",
@@ -247,8 +257,8 @@
       "email": "Veuillez saisir votre adresse e-mail.",
       "emailInvalid": "Veuillez saisir une adresse e-mail valide, par exemple votrenom{'@'}gmail.com.",
       "message": "Veuillez écrire un message d'au moins {min} caractères.",
-      "emailFake": "Cette adresse e-mail semble incorrecte ou inventée. Merci d'utiliser votre vraie adresse pour que je puisse vous répondre.",
-      "emailDisposable": "Les adresses e-mail temporaires ou jetables ne sont pas acceptées. Merci d'utiliser votre adresse permanente pour que je puisse vous répondre."
+      "emailFake": "Cette adresse e-mail ne semble pas correcte. Merci d'utiliser une vraie adresse pour que je puisse vous répondre.",
+      "emailDisposable": "Les adresses e-mail temporaires ne sont pas acceptées. Merci d'utiliser une adresse permanente pour que je puisse vous répondre."
     },
     "fixErrors": "Veuillez corriger les champs signalés."
   },
